@@ -1,12 +1,10 @@
 import axios from 'axios';
 
-export default function createHttpRequest(options) {
-  return axios
-    .get('https://pixabay.com/api/', options)
-    .then(response => {
-      return response.data;
-    })
-    .catch(error => {
-      throw error;
-    });
+export default async function createHttpRequest(options) {
+  try {
+    const response = await axios.get('https://pixabay.com/api/', options);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 }
