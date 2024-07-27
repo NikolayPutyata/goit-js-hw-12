@@ -95,6 +95,12 @@ function loadMoreImages() {
         });
       } else {
         addImagesToHtml(data.hits);
+        const galleryItem = document.querySelector('.gallery li');
+        const galleryItemParams = galleryItem.getBoundingClientRect();
+        window.scrollBy({
+          top: galleryItemParams.height * 2,
+          behavior: 'smooth',
+        });
       }
     })
     .catch(error => {
