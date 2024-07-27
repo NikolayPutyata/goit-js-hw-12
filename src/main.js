@@ -27,6 +27,7 @@ async function searchImagesFu(event) {
       title: '',
       message: 'The input field is empty or has less than two characters!',
     });
+    loadMoreButton.style.display = 'none';
     return;
   }
 
@@ -52,7 +53,6 @@ async function searchImagesFu(event) {
         title: '',
         message: 'No pictures found! Try again!',
       });
-      loadMoreButton.style.display = 'none';
     } else {
       addImagesToHtml(data.hits);
       loadMoreButton.style.display = 'block';
