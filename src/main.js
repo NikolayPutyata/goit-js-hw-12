@@ -53,6 +53,7 @@ async function searchImagesFu(event) {
         title: '',
         message: 'No pictures found! Try again!',
       });
+      loadMoreButton.style.display = 'none';
     } else {
       addImagesToHtml(data.hits);
       loadMoreButton.style.display = 'block';
